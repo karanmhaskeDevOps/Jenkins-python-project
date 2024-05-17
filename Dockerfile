@@ -1,11 +1,8 @@
 # this is my base image
-FROM python:3.8
+FROM python:3.8-alpine
 
 # Install python and pip
-RUN apk add --update py2-pip
-
-# Install curl
-RUN apk --no-cache add curl
+RUN apk add --no-cache python3-dev gcc libc-dev
 
 # install Python modules needed by the Python app
 COPY requirements.txt /usr/src/app/
